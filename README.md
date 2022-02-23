@@ -1,6 +1,6 @@
-# cy-movies
+#cy-movies
 
-# Create database called movies
+#Create database on your localhost called movies
 
 #Clone the project and put it inside Xammp/htdocs folder
 
