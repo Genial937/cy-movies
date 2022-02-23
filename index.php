@@ -1,6 +1,8 @@
 <?php
 include 'connect.php';
 include 'db/data.php';
+
+//read from json
 function show_contents()
 {
     try {
@@ -13,13 +15,14 @@ function show_contents()
     }
 }
 
-
+//save content
 function save_contents($data)
 {
     global $con;
     $movie_id = $data['movieID'];
     $title = $data['title'];
     $genre = $data['genre'];
+    //check genre
     //check if exist
     $check = $con->query("SELECT FROM data films WHERE `movie_id` = '$movie_id'");
     if (!$check) {
@@ -28,7 +31,8 @@ function save_contents($data)
 }
 
 show_contents();
-$data = $con->query("SELECT * FROM films");
+//fetch content
+$data = $con->query("SELECT * FROM films GROUP BY films.genre");
 ?>
 
 
